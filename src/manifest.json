@@ -1,0 +1,14 @@
+{
+  "name": "Exsample-CrxTechTalk20100409",
+  "version": "1.0",
+  "description": "example for Google Chrome Extention TeckTalk at 2010-04-09",
+  "background_page": "background.html",
+  "options_page": "options.html",
+  "browser_action": {
+    "default_icon": "icon.png",
+    "popup": "popup.html"
+  },
+  "permissions": [
+    "tabs"
+  ]
+}

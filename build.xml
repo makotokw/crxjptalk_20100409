@@ -1,0 +1,21 @@
+<?xml version="1.0" ?>
+<project default="unpacked_chrome">
+	<property name="projectname" value="crxjptalk_20100409"/>
+	<property name="dist" value="dist"/>
+	<property name="contents" value="${dist}/${projectname}"/>
+	<target name="unpacked_chrome">
+		<delete dir="${contents}"/>
+		<mkdir dir="${dist}"/>
+		<mkdir dir="${contents}"/>
+		<copy todir="${contents}">
+			<fileset dir="src"/>
+		</copy>
+	</target>
+	
+	<target name="package_chrome" depends="unpacked_chrome">
+		<delete file="${dist}/${projectname}.zip"/>
+		<zip destfile="${projectname}.zip">
+			<fileset dir="${contents}" includes="**"/>
+		</zip>
+	</target>
+</project>
