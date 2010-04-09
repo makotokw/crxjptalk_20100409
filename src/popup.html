@@ -29,7 +29,7 @@ chrome.extension.onRequest.addListener(
 	function(request, sender, sendResponse) {
 		if (request.eventUpdated) {
 			refreshUI();
-			console.log("eventUpdated by backgound");
+			console.log("eventUpdated by background");
 			return;
 		}
 	}

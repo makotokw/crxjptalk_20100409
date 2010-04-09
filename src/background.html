@@ -7,12 +7,12 @@ window.events = [];
 </script>
 <script>
 function fetchEvent() {
-	// $.get('http://....',function(data){
-		this.events = ["event"];
+	// $.get('http://....',{},function(data){
+		window.events = ["event"];
 		chrome.extension.sendRequest({eventUpdated:true});
 	//});
 }
-setInterval(updateEvent,5*60*1000);
+setInterval(fetchEvent,5*60*1000);
 </script>
 <script>
 // hack!: chrome.extension.getPopupPage
@@ -30,6 +30,12 @@ setInterval(updateEvent,5*60*1000);
 		}
 	}
 }).apply(chrome.extension,[]);
+</script>
+<script>
+setInterval(function(){
+	var p = chrome.extension.getPopupPage();
+	console.log(p ? "popupPage is visibled" : "popupPage is NOT visibled");
+},1000);
 </script>
 </body>
 </html>
